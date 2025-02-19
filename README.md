@@ -179,7 +179,7 @@ the output specgram for the degraded speech file is *similar* to:
 
 ![degradedSpeech](degradedSpeech.png)
 
-## Embedded System Memory Manipulation on MSP423 ARM CORTEX-M4 MCU
+## Memory Manipulation on MSP423 ARM CORTEX-M4 MCU
 
 ### About
 
