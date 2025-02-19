@@ -1,6 +1,6 @@
 # General Information
 
-This repository houses highlights the acoustic engineering tools
+This repository houses highlights from the acoustic engineering tools
 present within this personal github account. Highlights from other 
 repository heads is not displayed here.
 
