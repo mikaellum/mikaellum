@@ -210,3 +210,26 @@ git clone https://github.com/mikaellum/Embedded-Systems-Coursera.git
 cd course1/
 make -f Makefile
 ```
+
+## MATLAB GUI Application for Testing Microphones and Loudspeakers
+
+### Requirements
+
+    * MATLAB 2024b
+
+### About
+
+The files in this repository are written to in MATLAB to create a GUI Application
+for audio testing of Speakers and Microphones
+
+### Outputs
+
+The GUI for sweep tests looks *similar* to:
+
+![Sweep](Sweep.png)
+
+The GUI for play and record tests looks *similar* to:
+
+![Sweep](Speech.png)
+
+# Thank you for reading This Far!
