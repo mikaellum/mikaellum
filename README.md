@@ -2,7 +2,7 @@
 
 This repository houses highlights from the acoustic engineering tools
 present within this personal github account. Highlights from other 
-repository heads is not displayed here.
+repository heads are not displayed here.
 
 ### Author
 
@@ -13,7 +13,8 @@ Date: Feb 18, 2025
 
 ### About
 
-A browser accessible loudspeaker linear parameter design application
+A browser accessible loudspeaker linear parameter design application. The files 
+in this repository are written to specify a loudspeaker from it's linear parameters.
 
 ### Requirements
 
@@ -25,11 +26,6 @@ A browser accessible loudspeaker linear parameter design application
     * bokeh
     * loudspeaker
     * loudspeakerBokehPlotter
-
-### About
-
-The files in this repository are written to specify a loudspeaker
-from it's linear parameters.
 
 ### Installation
 
@@ -61,7 +57,9 @@ The output html app looks *similar* to:
 
 ### About
 
-A browser accessible loudspeaker linear parameter design application
+The files in this repository are written to run determine the electromotive
+properties of a loudspeaker using FEMM and the mechanical dimensions of the
+loudspeaker motor.
 
 ### Requirements
 
