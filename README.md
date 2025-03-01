@@ -7,7 +7,7 @@ repository heads are not displayed here.
 ### Author
 
 Author: [Michael Asfaw](https://www.linkedin.com/in/michael-asfaw-72723a2b/)\
-Created: Feb 18, 2025
+Created: Feb 18, 2025\
 Updated: Mar 1, 2025
 
 ## Loudspeaker LPM Simulation Tool
