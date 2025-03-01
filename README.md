@@ -10,6 +10,16 @@ Author: [Michael Asfaw](https://www.linkedin.com/in/michael-asfaw-72723a2b/)\
 Created: Feb 18, 2025\
 Updated: Mar 1, 2025
 
+** Table of Contents: **
+- [Loudspeaker LPM Simulation Tool](#item-one)
+- [Loudspeaker Magnetics Simulation Tool](#item-two)
+- [Speech Mean Opinion Score Using PESQ MOS](#item-three)
+- [Memory Manipulation on MSP423 ARM CORTEX-M4 MCU](#item-four)
+- [Speech Transcription and Word Error Rate Calculation](#item-five)
+- [MATLAB GUI Application for Testing Microphones and Loudspeakers](#item-six)
+
+<!-- headings -->
+<a id="item-one"></a>
 ## Loudspeaker LPM Simulation Tool
 
 ### About
@@ -54,6 +64,7 @@ The output html app looks *similar* to:
 
 ![Web-page](loudspeakerSimulator.png)
 
+<a id="item-two"></a>
 ## Loudspeaker Magnetics Simulation Tool
 
 ### About
@@ -122,6 +133,7 @@ the output plots for the non-linear BL are *similar* to:
 
 ![BL(x)](BLx.jpg)
 
+<a id="item-three"></a>
 ## Speech Mean Opinion Score Using PESQ MOS
 
 ### About
@@ -178,6 +190,7 @@ the output specgram for the degraded speech file is *similar* to:
 
 ![degradedSpeech](degradedSpeech.png)
 
+<a id="item-four"></a>
 ## Memory Manipulation on MSP423 ARM CORTEX-M4 MCU
 
 ### About
@@ -210,6 +223,7 @@ cd course1/
 make -f Makefile
 ```
 
+<a id="item-five"></a>
 ## Speech Transcription and Word Error Rate Calculation
 
 ### About
@@ -267,6 +281,7 @@ whisper transcription of the *.wav* file is *similar* to:
 Harvard List Number One, the Birch canoes slid on the smooth planks. Do the sheet to the dark blue background. It's easy to tell the depth of a well. These days a chicken leg is a rare dish. Rice is often served in round bowls. The juice of lemons makes fine punch. The box was thrown beside the parked truck. The hoax were fed chopped corn and garbage. Four hours of steady work faced us. Large size and stockings is hard to sell.
 ```
 
+<a id="item-six"></a>
 ## MATLAB GUI Application for Testing Microphones and Loudspeakers
 
 ### Requirements
