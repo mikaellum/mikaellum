@@ -7,7 +7,8 @@ repository heads are not displayed here.
 ### Author
 
 Author: [Michael Asfaw](https://www.linkedin.com/in/michael-asfaw-72723a2b/)\
-Date: Feb 18, 2025
+Created: Feb 18, 2025
+Updated: Mar 1, 2025
 
 ## Loudspeaker LPM Simulation Tool
 
@@ -207,6 +208,63 @@ git clone https://github.com/mikaellum/Embedded-Systems-Coursera.git
 ```shell
 cd course1/
 make -f Makefile
+```
+
+## Speech Transcription and Word Error Rate Calculation
+
+### About
+
+The files in this repository are written to help compare speech to text algorithms.
+
+### Requirements
+
+    * Python 3.12.2
+    * numpy
+    * whisper
+    * SpeechRecognition
+    * Sphinx
+
+
+### Installation
+
+To install, run this command in bash
+
+```bash
+git clone https://github.com/mikaellum/STT-TTS-WER-py.git
+```
+
+### Execution
+
+Example command for using sphinx model
+
+```shell
+python3 recognize.py originalSpeech.wav sphinx HL1reference.txt
+```
+
+Example command for using whisper model
+
+```shell
+python3 recognize.py originalSpeech.wav whisper HL1reference.txt
+```
+
+### Outputs
+
+transcription of the reference the *.wav* file is *similar* to:
+
+```
+Harvard List Number One. The birch canoe slid on the smooth planks. Glue the sheet to the dark blue background. It's easy to tell the depth of a well.These days a chicken leg is a rare dish. Rice is often served in round bowls. The juice of lemons makes fine punch. The box was thrown beside the parked truck. The hogs were fed chopped corn and garbage. Four hours of steady work faced us. A large size in stockings is hard to sell.
+```
+
+sphinx transcription of the *.wav* file is *similar* to:
+
+```
+competence number won the bet you they say the list may thanks this she did the dog of the background is she he'd tell the depth of the well of the stays at chicken leg is a bad day she writes is often said to round balls that she said lemons make a fine conch the boxes friend beside the puppets talk the hopeless fed chopped colon and garbage full houses steady well at fakes does not slices stockings is hard to sell
+```
+
+whisper transcription of the *.wav* file is *similar* to:
+
+```
+Harvard List Number One, the Birch canoes slid on the smooth planks. Do the sheet to the dark blue background. It's easy to tell the depth of a well. These days a chicken leg is a rare dish. Rice is often served in round bowls. The juice of lemons makes fine punch. The box was thrown beside the parked truck. The hoax were fed chopped corn and garbage. Four hours of steady work faced us. Large size and stockings is hard to sell.
 ```
 
 ## MATLAB GUI Application for Testing Microphones and Loudspeakers
