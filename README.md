@@ -10,7 +10,7 @@ Author: [Michael Asfaw](https://www.linkedin.com/in/michael-asfaw-72723a2b/)\
 Created: Feb 18, 2025\
 Updated: Mar 1, 2025
 
-** Table of Contents: **
+### Table of Contents:
 - [Loudspeaker LPM Simulation Tool](#item-one)
 - [Loudspeaker Magnetics Simulation Tool](#item-two)
 - [Speech Mean Opinion Score Using PESQ MOS](#item-three)
