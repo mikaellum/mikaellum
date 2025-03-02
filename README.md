@@ -275,10 +275,18 @@ sphinx transcription of the *.wav* file is *similar* to:
 competence number won the bet you they say the list may thanks this she did the dog of the background is she he'd tell the depth of the well of the stays at chicken leg is a bad day she writes is often said to round balls that she said lemons make a fine conch the boxes friend beside the puppets talk the hopeless fed chopped colon and garbage full houses steady well at fakes does not slices stockings is hard to sell
 ```
 
+```
+Word Error Rate of sphinx is: 75.904 [%]
+```
+
 whisper transcription of the *.wav* file is *similar* to:
 
 ```
 Harvard List Number One, the Birch canoes slid on the smooth planks. Do the sheet to the dark blue background. It's easy to tell the depth of a well. These days a chicken leg is a rare dish. Rice is often served in round bowls. The juice of lemons makes fine punch. The box was thrown beside the parked truck. The hoax were fed chopped corn and garbage. Four hours of steady work faced us. Large size and stockings is hard to sell.
+```
+
+```
+Word Error Rate of whisper is: 0.000 [%]
 ```
 
 <a id="item-six"></a>
@@ -303,4 +311,4 @@ The GUI for play and record tests looks *similar* to:
 
 ![Sweep](Speech.png)
 
-# Thank you for reading This Far!
+# Thank you for reading This!
