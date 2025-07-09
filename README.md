@@ -8,7 +8,7 @@ repository heads are not displayed here.
 
 Author: [Michael Asfaw](https://www.linkedin.com/in/michael-asfaw-72723a2b/)\
 Created: Feb 18, 2025\
-Updated: Mar 1, 2025
+Updated: Jul 9, 2025
 
 ### Table of Contents:
 - [Loudspeaker LPM Simulation Tool](#item-one)
@@ -19,10 +19,14 @@ Updated: Mar 1, 2025
 - [MATLAB GUI Application for Testing Microphones and Loudspeakers](#item-six)
 
 <!-- headings -->
-<a id="item-one"></a>
-## Loudspeaker LPM Simulation Tool
 
-### About
+<details>
+<a id="item-one"></a>
+<summary><strong>Loudspeaker LPM Simulation Tool</summary>
+
+<hr>
+
+>[!NOTE]
 
 A browser accessible loudspeaker linear parameter design application. The files 
 in this repository are written to specify a loudspeaker from it's linear parameters.
@@ -63,11 +67,17 @@ On a browser
 The output html app looks *similar* to:
 
 ![Web-page](loudspeakerSimulator.png)
+</details>
 
+<hr>
+
+<details>
 <a id="item-two"></a>
-## Loudspeaker Magnetics Simulation Tool
+<summary><strong>Loudspeaker Magnetics Simulation Tool</summary>
 
-### About
+<hr>
+
+>[!NOTE]
 
 The files in this repository are written to run determine the electromotive
 properties of a loudspeaker using FEMM and the mechanical dimensions of the
@@ -133,10 +143,17 @@ the output plots for the non-linear BL are *similar* to:
 
 ![BL(x)](BLx.jpg)
 
-<a id="item-three"></a>
-## Speech Mean Opinion Score Using PESQ MOS
+</details>
 
-### About
+<hr>
+
+<details>
+<a id="item-three"></a>
+<summary><strong>Speech Mean Opinion Score Using PESQ MOS</strong>
+
+<hr>
+
+>[!NOTE]
 
 Python code to determine PESQ-MOS of a degraded audio file to an original
 for both wideband and narrowband applications
@@ -190,10 +207,17 @@ the output specgram for the degraded speech file is *similar* to:
 
 ![degradedSpeech](degradedSpeech.png)
 
-<a id="item-four"></a>
-## Memory Manipulation on MSP423 ARM CORTEX-M4 MCU
+</details>
 
-### About
+<hr>
+
+<details>
+<a id="item-four"></a>
+<summary><strong>Memory Manipulation on MSP423 ARM CORTEX-M4 MCU</summary>
+
+<hr>
+
+>[!NOTE]
 
 Assignment packages and solutions for [Embedded Systems](https://www.coursera.org/learn/introduction-embedded-systems) class on Coursera.
 The folders are the assignments, to compile the code use standard make command.
@@ -220,13 +244,20 @@ git clone https://github.com/mikaellum/Embedded-Systems-Coursera.git
 
 ```shell
 cd course1/
-make -f Makefile
+make
 ```
 
-<a id="item-five"></a>
-## Speech Transcription and Word Error Rate Calculation
+</details>
 
-### About
+<hr>
+
+<details>
+<a id="item-five"></a>
+<summary><strong>Speech Transcription and Word Error Rate Calculation</summary>
+
+<hr>
+
+>[!NOTE]
 
 The files in this repository are written to help compare speech to text algorithms.
 
@@ -289,14 +320,21 @@ Harvard List Number One, the Birch canoes slid on the smooth planks. Do the shee
 Word Error Rate of whisper is: 0.000 [%]
 ```
 
+</details>
+
+<hr>
+
+<details>
 <a id="item-six"></a>
-## MATLAB GUI Application for Testing Microphones and Loudspeakers
+<summary><strong>MATLAB GUI Application for Testing Microphones and Loudspeakers</summary>
 
-### Requirements
+<hr>
 
-    * MATLAB 2024b
+>[!IMPORTANT]
 
-### About
+    * Requires MATLAB 2024b
+
+>[!NOTE]
 
 The files in this repository are written to in MATLAB to create a GUI Application
 for audio testing of Speakers and Microphones
@@ -311,4 +349,6 @@ The GUI for play and record tests looks *similar* to:
 
 ![Sweep](Speech.png)
 
-# Thank you for reading This!
+<hr>
+
+</details>
