@@ -25,10 +25,9 @@ Updated: Jul 9, 2025
 
 <hr>
 
-> :note:
-
-A browser accessible loudspeaker linear parameter design application. The files 
-in this repository are written to specify a loudspeaker from it's linear parameters.
+> [!NOTE]
+> A browser accessible loudspeaker linear parameter design application. The files 
+> in this repository are written to specify a loudspeaker from it's linear parameters.
 
 ### Requirements
 
@@ -76,11 +75,10 @@ The output html app looks *similar* to:
 
 <hr>
 
-[!NOTE]
-
-The files in this repository are written to run determine the electromotive
-properties of a loudspeaker using FEMM and the mechanical dimensions of the
-loudspeaker motor.
+> [!NOTE]
+> The files in this repository are written to run determine the electromotive
+> properties of a loudspeaker using FEMM and the mechanical dimensions of the
+> loudspeaker motor.
 
 ### Requirements
 
@@ -152,10 +150,9 @@ the output plots for the non-linear BL are *similar* to:
 
 <hr>
 
-[!NOTE]
-
-Python code to determine PESQ-MOS of a degraded audio file to an original
-for both wideband and narrowband applications
+> [!NOTE]
+> Python code to determine PESQ-MOS of a degraded audio file to an original
+> for both wideband and narrowband applications
 
 ### Requirements
 
@@ -217,14 +214,9 @@ the output specgram for the degraded speech file is *similar* to:
 
 <hr>
 
-[!NOTE]
-
-Assignment packages and solutions for [Embedded Systems](https://www.coursera.org/learn/introduction-embedded-systems) class on Coursera.
-The folders are the assignments, to compile the code use standard make command.
-The output and object files are not included in the repository (.gitignore)
-
-The code is intended to manipulate registers and memory addresses on a TI MSP423 ARM CORTEX-M4
-Evaluation Kit.
+> [!NOTE]
+> The code is intended to manipulate registers and memory addresses on a TI MSP423 ARM CORTEX-M4
+> Evaluation Kit.
 
 ### Requirements
 
@@ -257,9 +249,8 @@ make
 
 <hr>
 
-[!NOTE]
-
-The files in this repository are written to help compare speech to text algorithms.
+> [!NOTE]
+> The files in this repository are written to help compare speech to text algorithms.
 
 ### Requirements
 
@@ -330,9 +321,8 @@ Word Error Rate of whisper is: 0.000 [%]
 
 <hr>
 
-[!IMPORTANT]
-
-    * Requires MATLAB 2024b
+> [!IMPORTANT]
+> Requires MATLAB 2024b
 
 The files in this repository are written to in MATLAB to create a GUI Application
 for audio testing of Speakers and Microphones
