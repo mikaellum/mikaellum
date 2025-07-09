@@ -25,7 +25,7 @@ Updated: Jul 9, 2025
 
 <hr>
 
->[!NOTE]
+> :note:
 
 A browser accessible loudspeaker linear parameter design application. The files 
 in this repository are written to specify a loudspeaker from it's linear parameters.
@@ -76,7 +76,7 @@ The output html app looks *similar* to:
 
 <hr>
 
->[!NOTE]
+[!NOTE]
 
 The files in this repository are written to run determine the electromotive
 properties of a loudspeaker using FEMM and the mechanical dimensions of the
@@ -152,7 +152,7 @@ the output plots for the non-linear BL are *similar* to:
 
 <hr>
 
->[!NOTE]
+[!NOTE]
 
 Python code to determine PESQ-MOS of a degraded audio file to an original
 for both wideband and narrowband applications
@@ -217,7 +217,7 @@ the output specgram for the degraded speech file is *similar* to:
 
 <hr>
 
->[!NOTE]
+[!NOTE]
 
 Assignment packages and solutions for [Embedded Systems](https://www.coursera.org/learn/introduction-embedded-systems) class on Coursera.
 The folders are the assignments, to compile the code use standard make command.
@@ -257,7 +257,7 @@ make
 
 <hr>
 
->[!NOTE]
+[!NOTE]
 
 The files in this repository are written to help compare speech to text algorithms.
 
@@ -330,7 +330,7 @@ Word Error Rate of whisper is: 0.000 [%]
 
 <hr>
 
->[!IMPORTANT]
+[!IMPORTANT]
 
     * Requires MATLAB 2024b
 
