@@ -18,16 +18,15 @@ Updated: Jul 9, 2025
 - [Speech Transcription and Word Error Rate Calculation](#item-five)
 - [MATLAB GUI Application for Testing Microphones and Loudspeakers](#item-six)
 
+> [!NOTE]
+> A browser accessible loudspeaker linear parameter design application. The files 
+> in this repository are written to specify a loudspeaker from it's linear parameters.
 
 <details>
 <a id="item-one"></a>
 <summary><strong>Loudspeaker LPM Simulation Tool</summary>
 
 <hr>
-
-> [!NOTE]
-> A browser accessible loudspeaker linear parameter design application. The files 
-> in this repository are written to specify a loudspeaker from it's linear parameters.
 
 ### Requirements
 
@@ -69,16 +68,16 @@ The output html app looks *similar* to:
 
 <hr>
 
+> [!NOTE]
+> The files in this repository are written to run determine the electromotive
+> properties of a loudspeaker using FEMM and the mechanical dimensions of the
+> loudspeaker motor.
+
 <details>
 <a id="item-two"></a>
 <summary><strong>Loudspeaker Magnetics Simulation Tool</summary>
 
 <hr>
-
-> [!NOTE]
-> The files in this repository are written to run determine the electromotive
-> properties of a loudspeaker using FEMM and the mechanical dimensions of the
-> loudspeaker motor.
 
 ### Requirements
 
@@ -144,15 +143,15 @@ the output plots for the non-linear BL are *similar* to:
 
 <hr>
 
+> [!NOTE]
+> Python code to determine PESQ-MOS of a degraded audio file to an original
+> for both wideband and narrowband applications
+
 <details>
 <a id="item-three"></a>
 <summary><strong>Speech Mean Opinion Score Using PESQ MOS</summary>
 
 <hr>
-
-> [!NOTE]
-> Python code to determine PESQ-MOS of a degraded audio file to an original
-> for both wideband and narrowband applications
 
 ### Requirements
 
@@ -208,15 +207,15 @@ the output specgram for the degraded speech file is *similar* to:
 
 <hr>
 
+> [!NOTE]
+> The code is intended to manipulate registers and memory addresses on a TI MSP423 ARM CORTEX-M4
+> Evaluation Kit.
+
 <details>
 <a id="item-four"></a>
 <summary><strong>Memory Manipulation on MSP423 ARM CORTEX-M4 MCU</summary>
 
 <hr>
-
-> [!NOTE]
-> The code is intended to manipulate registers and memory addresses on a TI MSP423 ARM CORTEX-M4
-> Evaluation Kit.
 
 ### Requirements
 
@@ -243,14 +242,14 @@ make
 
 <hr>
 
+> [!NOTE]
+> The files in this repository are written to help compare speech to text algorithms.
+
 <details>
 <a id="item-five"></a>
 <summary><strong>Speech Transcription and Word Error Rate Calculation</summary>
 
 <hr>
-
-> [!NOTE]
-> The files in this repository are written to help compare speech to text algorithms.
 
 ### Requirements
 
@@ -315,14 +314,14 @@ Word Error Rate of whisper is: 0.000 [%]
 
 <hr>
 
+> [!IMPORTANT]
+> Requires MATLAB 2024b
+
 <details>
 <a id="item-six"></a>
 <summary><strong>MATLAB GUI Application for Testing Microphones and Loudspeakers</summary>
 
 <hr>
-
-> [!IMPORTANT]
-> Requires MATLAB 2024b
 
 The files in this repository are written to in MATLAB to create a GUI Application
 for audio testing of Speakers and Microphones
