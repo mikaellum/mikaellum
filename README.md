@@ -18,7 +18,6 @@ Updated: Jul 9, 2025
 - [Speech Transcription and Word Error Rate Calculation](#item-five)
 - [MATLAB GUI Application for Testing Microphones and Loudspeakers](#item-six)
 
-<!-- headings -->
 
 <details>
 <a id="item-one"></a>
@@ -149,7 +148,7 @@ the output plots for the non-linear BL are *similar* to:
 
 <details>
 <a id="item-three"></a>
-<summary><strong>Speech Mean Opinion Score Using PESQ MOS</strong>
+<summary><strong>Speech Mean Opinion Score Using PESQ MOS</summary>
 
 <hr>
 
@@ -172,7 +171,7 @@ PESQ MOS scores for speech (telephony standard).
 
 To install, run this command in bash
 
-```bash
+```
 git clone https://github.com/mikaellum/PESQ-MOS-py.git
 ```
 
@@ -206,6 +205,7 @@ the output specgram for the orignal speech file is *similar* to:
 the output specgram for the degraded speech file is *similar* to:
 
 ![degradedSpeech](degradedSpeech.png)
+
 
 </details>
 
@@ -333,8 +333,6 @@ Word Error Rate of whisper is: 0.000 [%]
 >[!IMPORTANT]
 
     * Requires MATLAB 2024b
-
->[!NOTE]
 
 The files in this repository are written to in MATLAB to create a GUI Application
 for audio testing of Speakers and Microphones
