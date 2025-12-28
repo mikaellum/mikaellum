@@ -6,7 +6,7 @@ repository heads are not displayed here.
 
 ### Author
 
-Author: [Michael Asfaw](https://www.linkedin.com/in/michael-asfaw-72723a2b/)\
+Author: [Mikael {Michael} Asfaw](https://www.linkedin.com/in/mikael-asfaw-72723a2b/)\
 Created: Feb 18, 2025\
 Updated: Jul 9, 2025
 
