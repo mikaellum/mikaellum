@@ -6,9 +6,9 @@ repository heads are not displayed here.
 
 ### Author
 
-Author: [Mikael {Michael} Asfaw](https://www.linkedin.com/in/mikael-asfaw-72723a2b/)\
+Author: [Mikael Asfaw](https://www.linkedin.com/in/mikael-asfaw-72723a2b/)\
 Created: Feb 18, 2025\
-Updated: Jul 9, 2025
+Updated: Feb 10, 2026
 
 ### Table of Contents:
 - [Loudspeaker LPM Simulation Tool](#item-one)
@@ -17,6 +17,7 @@ Updated: Jul 9, 2025
 - [Memory Manipulation on MSP423 ARM CORTEX-M4 MCU](#item-four)
 - [Speech Transcription and Word Error Rate Calculation](#item-five)
 - [MATLAB GUI Application for Testing Microphones and Loudspeakers](#item-six)
+- [Machine Learning Models to Classify Music Genre](#item-seven)
 
 > [!NOTE]
 > A browser accessible loudspeaker linear parameter design application. The files 
@@ -336,6 +337,51 @@ The GUI for play and record tests looks *similar* to:
 
 ![Sweep](Speech.png)
 
+</details>
+
+
 <hr>
 
+> [!NOTE]
+> The Machine learning model design here is intended to listen to short audio snippets and classify the music genre of the audio file
+
+<details>
+<a id="item-seven"></a>
+<summary><strong>Machine Learning Model to Classify Music Genre based on short Audio Clips</summary>
+
+<hr>
+
+### Requirements
+
+    * Python 3.12.2
+    * numpy
+    * pandas
+    * pickle
+    * sklean
+    * tensorflow
+    * librosa
+
+### Neural Network Architecture
+
+The tensor-flow neural network architecture looks *like* this:
+
+![Tensor-Flow Neural Network Architecure](tf_architecture.png)
+
+The model was trained for *100 Epochs* with an accuracy of *0.96* and a loss of *0.194*
+
+### Outputs
+
+The tensor-flow neural network confusion matrix looks *like* this:
+
+![Tensor-Flow Neural Network Confusion Matrix](tf_NN_Confusion_matrix.jpg)
+
+The SVM confusion matrix looks *like* this:
+
+![Support Vector Machine Confusion Matrix](SVM_Confusion_matrix.jpg)
+
+All the designed models settled around a F1 Score between *0.41 - 0.47*, this was due to feature distortion introduced by mashing together truly uncorrelated genre
+
+The model architecture is sound, would perform better with cleaner datasets. The final paper can be found [here](ML_FinalProject_Team-2.pdf)
+
 </details>
+
