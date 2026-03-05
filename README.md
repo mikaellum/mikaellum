@@ -33,9 +33,9 @@ Updated: Mar 5, 2026
 > A browser accessible loudspeaker linear parameter design application. The files 
 > in this repository are written to specify a loudspeaker from it's linear parameters.
 
-<details>
+<details (Click Triangle to Expand)>
 <a id="item-one"></a>
-<summary><strong>Loudspeaker LPM Simulation Tool (Click Triangle to Expand)</summary>
+<summary><strong>Loudspeaker LPM Simulation Tool</summary>
 
 <hr>
 
@@ -75,7 +75,7 @@ On a browser
 The output html app looks *similar* to:
 
 ![Web-page](loudspeakerSimulator.png)
-</details>
+</details (Click Triangle to Expand)>
 
 <hr>
 
