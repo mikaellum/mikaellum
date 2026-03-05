@@ -1,14 +1,22 @@
 # General Information
 
-This repository houses highlights from the acoustic engineering tools
-present within this personal github account. Highlights from other 
-repository heads are not displayed here.
+Hello, I'm Mikael Asfaw. I am a Principal Audio & Acoustics Engineer with over 10 years of experience delivering production-scale\
+audio systems across consumer electronics, automotive,and autonomous platforms. This GitHub houses the acoustic engineering tools\
+I develop for rapid prototyping, algorithm evaluation, and hardware testing.
+
+## Repository Highlights:
+* __Acoustic Simulation:__ Python-based loudspeaker linear parameter design (LPM) and pyFEMM magnetics simulation applications.
+* __Speech & Audio Processing:__ Automated pipelines for speech transcription and Word Error Rate (WER) calculation using Whisper/Sphinx,\
+  PESQ MOS telephony scoring tools, and MATLAB GUIs for transducer sweep testing.
+* __Embedded Systems & ML:__ Memory manipulation on ARM Cortex-M4 MCUs and TensorFlow/SVM machine learning models for audio classification.
+* __Innovation & Hardware:__ I hold 18+ patents in transducer physics, beamforming, and binaural systems , and utilize data-driven tools to\
+ enhance manufacturing robustness.
 
 ### Author
 
 Author: [Mikael Asfaw](https://www.linkedin.com/in/mikael-asfaw-72723a2b/)\
 Created: Feb 18, 2025\
-Updated: Feb 10, 2026
+Updated: Mar 5, 2026
 
 ### Table of Contents:
 - [Loudspeaker LPM Simulation Tool](#item-one)
@@ -19,13 +27,15 @@ Updated: Feb 10, 2026
 - [MATLAB GUI Application for Testing Microphones and Loudspeakers](#item-six)
 - [Machine Learning Models to Classify Music Genre](#item-seven)
 
+<hr>
+
 > [!NOTE]
 > A browser accessible loudspeaker linear parameter design application. The files 
 > in this repository are written to specify a loudspeaker from it's linear parameters.
 
 <details>
 <a id="item-one"></a>
-<summary><strong>Loudspeaker LPM Simulation Tool</summary>
+<summary><strong>Loudspeaker LPM Simulation Tool (Click Triangle to Expand)</summary>
 
 <hr>
 
@@ -76,7 +86,7 @@ The output html app looks *similar* to:
 
 <details>
 <a id="item-two"></a>
-<summary><strong>Loudspeaker Magnetics Simulation Tool</summary>
+<summary><strong>Loudspeaker Magnetics Simulation Tool (Click Triangle to Expand)</summary>
 
 <hr>
 
@@ -150,7 +160,7 @@ the output plots for the non-linear BL are *similar* to:
 
 <details>
 <a id="item-three"></a>
-<summary><strong>Speech Mean Opinion Score Using PESQ MOS</summary>
+<summary><strong>Speech Mean Opinion Score Using PESQ MOS (Click Triangle to Expand)</summary>
 
 <hr>
 
@@ -214,7 +224,7 @@ the output specgram for the degraded speech file is *similar* to:
 
 <details>
 <a id="item-four"></a>
-<summary><strong>Memory Manipulation on MSP423 ARM CORTEX-M4 MCU</summary>
+<summary><strong>Memory Manipulation on MSP423 ARM CORTEX-M4 MCU (Click Triangle to Expand)</summary>
 
 <hr>
 
@@ -248,7 +258,7 @@ make
 
 <details>
 <a id="item-five"></a>
-<summary><strong>Speech Transcription and Word Error Rate Calculation</summary>
+<summary><strong>Speech Transcription and Word Error Rate Calculation (Click Triangle to Expand)</summary>
 
 <hr>
 
@@ -320,7 +330,7 @@ Word Error Rate of whisper is: 0.000 [%]
 
 <details>
 <a id="item-six"></a>
-<summary><strong>MATLAB GUI Application for Testing Microphones and Loudspeakers</summary>
+<summary><strong>MATLAB GUI Application for Testing Microphones and Loudspeakers (Click Triangle to Expand)</summary>
 
 <hr>
 
@@ -347,7 +357,7 @@ The GUI for play and record tests looks *similar* to:
 
 <details>
 <a id="item-seven"></a>
-<summary><strong>Machine Learning Model to Classify Music Genre based on short Audio Clips</summary>
+<summary><strong>Machine Learning Model to Classify Music Genre based on short Audio Clips (Click Triangle to Expand)</summary>
 
 <hr>
 
