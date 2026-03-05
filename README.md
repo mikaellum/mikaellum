@@ -1,7 +1,7 @@
 # General Information
 
-Hello, I'm Mikael Asfaw. I am a Principal Audio & Acoustics Engineer with over 10 years of experience delivering production-scale\
-audio systems across consumer electronics, automotive,and autonomous platforms. This GitHub houses the acoustic engineering tools\
+Hello, I'm Mikael Asfaw. I am a Principal Audio & Acoustics Engineer with over 10 years of experience delivering production-scale
+audio systems across consumer electronics, automotive,and autonomous platforms. This GitHub houses the acoustic engineering tools
 I develop for rapid prototyping, algorithm evaluation, and hardware testing.
 
 ## Repository Highlights:
@@ -33,7 +33,7 @@ Updated: Mar 5, 2026
 > A browser accessible loudspeaker linear parameter design application. The files 
 > in this repository are written to specify a loudspeaker from it's linear parameters.
 
-<details (Click Triangle to Expand)>
+<click-for-details>
 <a id="item-one"></a>
 <summary><strong>Loudspeaker LPM Simulation Tool</summary>
 
@@ -75,7 +75,7 @@ On a browser
 The output html app looks *similar* to:
 
 ![Web-page](loudspeakerSimulator.png)
-</details (Click Triangle to Expand)>
+</click-for-details>
 
 <hr>
 
@@ -84,7 +84,7 @@ The output html app looks *similar* to:
 > properties of a loudspeaker using FEMM and the mechanical dimensions of the
 > loudspeaker motor.
 
-<details>
+<click-for-details>
 <a id="item-two"></a>
 <summary><strong>Loudspeaker Magnetics Simulation Tool (Click Triangle to Expand)</summary>
 
@@ -150,7 +150,7 @@ the output plots for the non-linear BL are *similar* to:
 
 ![BL(x)](BLx.jpg)
 
-</details>
+</click-for-details>
 
 <hr>
 
@@ -158,7 +158,7 @@ the output plots for the non-linear BL are *similar* to:
 > Python code to determine PESQ-MOS of a degraded audio file to an original
 > for both wideband and narrowband applications
 
-<details>
+<click-for-details>
 <a id="item-three"></a>
 <summary><strong>Speech Mean Opinion Score Using PESQ MOS (Click Triangle to Expand)</summary>
 
@@ -214,7 +214,7 @@ the output specgram for the degraded speech file is *similar* to:
 ![degradedSpeech](degradedSpeech.png)
 
 
-</details>
+</click-for-details>
 
 <hr>
 
@@ -222,7 +222,7 @@ the output specgram for the degraded speech file is *similar* to:
 > The code is intended to manipulate registers and memory addresses on a TI MSP423 ARM CORTEX-M4
 > Evaluation Kit.
 
-<details>
+<click-for-details>
 <a id="item-four"></a>
 <summary><strong>Memory Manipulation on MSP423 ARM CORTEX-M4 MCU (Click Triangle to Expand)</summary>
 
@@ -249,14 +249,14 @@ cd course1/
 make
 ```
 
-</details>
+</click-for-details>
 
 <hr>
 
 > [!NOTE]
 > The files in this repository are written to help compare speech to text algorithms.
 
-<details>
+<click-for-details>
 <a id="item-five"></a>
 <summary><strong>Speech Transcription and Word Error Rate Calculation (Click Triangle to Expand)</summary>
 
@@ -321,14 +321,14 @@ Harvard List Number One, the Birch canoes slid on the smooth planks. Do the shee
 Word Error Rate of whisper is: 0.000 [%]
 ```
 
-</details>
+</click-for-details>
 
 <hr>
 
 > [!IMPORTANT]
 > Requires MATLAB 2024b
 
-<details>
+<click-for-details>
 <a id="item-six"></a>
 <summary><strong>MATLAB GUI Application for Testing Microphones and Loudspeakers (Click Triangle to Expand)</summary>
 
@@ -347,7 +347,7 @@ The GUI for play and record tests looks *similar* to:
 
 ![Sweep](Speech.png)
 
-</details>
+</click-for-details>
 
 
 <hr>
@@ -355,7 +355,7 @@ The GUI for play and record tests looks *similar* to:
 > [!NOTE]
 > The Machine learning model design here is intended to listen to short audio snippets and classify the music genre of the audio file
 
-<details>
+<click-for-details>
 <a id="item-seven"></a>
 <summary><strong>Machine Learning Model to Classify Music Genre based on short Audio Clips (Click Triangle to Expand)</summary>
 
@@ -393,5 +393,5 @@ All the designed models settled around a F1 Score between *0.41 - 0.47*, this wa
 
 The model architecture is sound, would perform better with cleaner datasets. The final paper can be found [here](ML_FinalProject_Team-2.pdf)
 
-</details>
+</click-for-details>
 
