@@ -33,7 +33,7 @@ Updated: Mar 5, 2026
 > A browser accessible loudspeaker linear parameter design application. The files 
 > in this repository are written to specify a loudspeaker from it's linear parameters.
 
-<click-for-details>
+<details>
 <a id="item-one"></a>
 <summary><strong>Loudspeaker LPM Simulation Tool</summary>
 
@@ -75,7 +75,7 @@ On a browser
 The output html app looks *similar* to:
 
 ![Web-page](loudspeakerSimulator.png)
-</click-for-details>
+</details>
 
 <hr>
 
@@ -84,7 +84,7 @@ The output html app looks *similar* to:
 > properties of a loudspeaker using FEMM and the mechanical dimensions of the
 > loudspeaker motor.
 
-<click-for-details>
+<details>
 <a id="item-two"></a>
 <summary><strong>Loudspeaker Magnetics Simulation Tool (Click Triangle to Expand)</summary>
 
@@ -150,7 +150,7 @@ the output plots for the non-linear BL are *similar* to:
 
 ![BL(x)](BLx.jpg)
 
-</click-for-details>
+</details>
 
 <hr>
 
@@ -158,7 +158,7 @@ the output plots for the non-linear BL are *similar* to:
 > Python code to determine PESQ-MOS of a degraded audio file to an original
 > for both wideband and narrowband applications
 
-<click-for-details>
+<details>
 <a id="item-three"></a>
 <summary><strong>Speech Mean Opinion Score Using PESQ MOS (Click Triangle to Expand)</summary>
 
@@ -214,7 +214,7 @@ the output specgram for the degraded speech file is *similar* to:
 ![degradedSpeech](degradedSpeech.png)
 
 
-</click-for-details>
+</details>
 
 <hr>
 
@@ -222,7 +222,7 @@ the output specgram for the degraded speech file is *similar* to:
 > The code is intended to manipulate registers and memory addresses on a TI MSP423 ARM CORTEX-M4
 > Evaluation Kit.
 
-<click-for-details>
+<details>
 <a id="item-four"></a>
 <summary><strong>Memory Manipulation on MSP423 ARM CORTEX-M4 MCU (Click Triangle to Expand)</summary>
 
@@ -249,14 +249,14 @@ cd course1/
 make
 ```
 
-</click-for-details>
+</details>
 
 <hr>
 
 > [!NOTE]
 > The files in this repository are written to help compare speech to text algorithms.
 
-<click-for-details>
+<details>
 <a id="item-five"></a>
 <summary><strong>Speech Transcription and Word Error Rate Calculation (Click Triangle to Expand)</summary>
 
@@ -321,14 +321,14 @@ Harvard List Number One, the Birch canoes slid on the smooth planks. Do the shee
 Word Error Rate of whisper is: 0.000 [%]
 ```
 
-</click-for-details>
+</details>
 
 <hr>
 
 > [!IMPORTANT]
 > Requires MATLAB 2024b
 
-<click-for-details>
+<details>
 <a id="item-six"></a>
 <summary><strong>MATLAB GUI Application for Testing Microphones and Loudspeakers (Click Triangle to Expand)</summary>
 
@@ -347,7 +347,7 @@ The GUI for play and record tests looks *similar* to:
 
 ![Sweep](Speech.png)
 
-</click-for-details>
+</details>
 
 
 <hr>
@@ -355,7 +355,7 @@ The GUI for play and record tests looks *similar* to:
 > [!NOTE]
 > The Machine learning model design here is intended to listen to short audio snippets and classify the music genre of the audio file
 
-<click-for-details>
+<details>
 <a id="item-seven"></a>
 <summary><strong>Machine Learning Model to Classify Music Genre based on short Audio Clips (Click Triangle to Expand)</summary>
 
@@ -393,5 +393,5 @@ All the designed models settled around a F1 Score between *0.41 - 0.47*, this wa
 
 The model architecture is sound, would perform better with cleaner datasets. The final paper can be found [here](ML_FinalProject_Team-2.pdf)
 
-</click-for-details>
+</details>
 
