@@ -6,11 +6,9 @@ I develop for rapid prototyping, algorithm evaluation, and hardware testing.
 
 ## Repository Highlights:
 * __Acoustic Simulation:__ Python-based loudspeaker linear parameter design (LPM) and pyFEMM magnetics simulation applications.
-* __Speech & Audio Processing:__ Automated pipelines for speech transcription and Word Error Rate (WER) calculation using Whisper/Sphinx,\
-  PESQ MOS telephony scoring tools, and MATLAB GUIs for transducer sweep testing.
+* __Speech & Audio Processing:__ Automated pipelines for speech transcription and Word Error Rate (WER) calculation using Whisper/Sphinx,PESQ MOS telephony scoring tools, and MATLAB GUIs for transducer sweep testing.
 * __Embedded Systems & ML:__ Memory manipulation on ARM Cortex-M4 MCUs and TensorFlow/SVM machine learning models for audio classification.
-* __Innovation & Hardware:__ I hold 18+ patents in transducer physics, beamforming, and binaural systems , and utilize data-driven tools to\
- enhance manufacturing robustness.
+* __Innovation & Hardware:__ I hold 18+ patents in transducer physics, beamforming, and binaural systems , and utilize data-driven tools to enhance manufacturing robustness.
 
 ### Author
 
