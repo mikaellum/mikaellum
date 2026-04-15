@@ -1,6 +1,6 @@
 # General Information
 
-Hello, I'm Mikael Asfaw. I am a Principal Audio & Acoustics Engineer with over 10 years of experience delivering production-scale
+Hello, I'm Mikael Asfaw. I am a Principal/Staff Embedded Audio & Acoustics Engineer with over 10 years of experience delivering production-scale
 audio systems across consumer electronics, automotive,and autonomous platforms. This GitHub houses the acoustic engineering tools
 I develop for rapid prototyping, algorithm evaluation, and hardware testing.
 
@@ -14,7 +14,7 @@ I develop for rapid prototyping, algorithm evaluation, and hardware testing.
 
 Author: [Mikael Asfaw](https://www.linkedin.com/in/mikael-asfaw-72723a2b/)\
 Created: Feb 18, 2025\
-Updated: Mar 5, 2026
+Updated: Apr 15, 2026
 
 ### Table of Contents:
 - [Loudspeaker LPM Simulation Tool](#item-one)
@@ -84,7 +84,7 @@ The output html app looks *similar* to:
 
 <details>
 <a id="item-two"></a>
-<summary><strong>Loudspeaker Magnetics Simulation Tool (Click Triangle to Expand)</summary>
+<summary><strong>Loudspeaker Magnetics Simulation Tool </summary>
 
 <hr>
 
@@ -158,7 +158,7 @@ the output plots for the non-linear BL are *similar* to:
 
 <details>
 <a id="item-three"></a>
-<summary><strong>Speech Mean Opinion Score Using PESQ MOS (Click Triangle to Expand)</summary>
+<summary><strong>Speech Mean Opinion Score Using PESQ MOS </summary>
 
 <hr>
 
@@ -222,7 +222,7 @@ the output specgram for the degraded speech file is *similar* to:
 
 <details>
 <a id="item-four"></a>
-<summary><strong>Memory Manipulation on MSP423 ARM CORTEX-M4 MCU (Click Triangle to Expand)</summary>
+<summary><strong>Memory Manipulation on MSP423 ARM CORTEX-M4 MCU </summary>
 
 <hr>
 
@@ -256,7 +256,7 @@ make
 
 <details>
 <a id="item-five"></a>
-<summary><strong>Speech Transcription and Word Error Rate Calculation (Click Triangle to Expand)</summary>
+<summary><strong>Speech Transcription and Word Error Rate Calculation </summary>
 
 <hr>
 
@@ -328,7 +328,7 @@ Word Error Rate of whisper is: 0.000 [%]
 
 <details>
 <a id="item-six"></a>
-<summary><strong>MATLAB GUI Application for Testing Microphones and Loudspeakers (Click Triangle to Expand)</summary>
+<summary><strong>MATLAB GUI Application for Testing Microphones and Loudspeakers </summary>
 
 <hr>
 
@@ -355,7 +355,7 @@ The GUI for play and record tests looks *similar* to:
 
 <details>
 <a id="item-seven"></a>
-<summary><strong>Machine Learning Model to Classify Music Genre based on short Audio Clips (Click Triangle to Expand)</summary>
+<summary><strong>Machine Learning Model to Classify Music Genre based on short Audio Clips </summary>
 
 <hr>
 
