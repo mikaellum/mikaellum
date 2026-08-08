@@ -36,7 +36,7 @@ This site centers on **R&D tools and projects**: practical methods for prototypi
 ### Table of Contents
 - [Loudspeaker LPM Simulation Tool](#loudspeaker-lpm-simulation-tool)
 - [Loudspeaker Magnetics Simulation Tool](#loudspeaker-magnetics-simulation-tool)
-- [Embedded Systems and FPGA DSP](#embedded-systems-and-fpga-dsp)
+- [Embedded Systems, FPGA Audio DSP, and Machine Vision](#embedded-systems-fpga-audio-dsp-and-machine-vision)
 - [Audio Test App](#audio-test-app)
 - [Machine Learning Models to Classify Music Genre](#machine-learning-models-to-classify-music-genre)
 
@@ -92,11 +92,11 @@ Implementation details are proprietary.
 
 ---
 
-### Embedded Systems and FPGA DSP
+### Embedded Systems, FPGA Audio DSP, and Machine Vision
 
-Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** (STM32F042K6) and a **Xilinx Zynq** platform in Vivado—bare-metal C on the MCU side, VHDL + AXI-Stream audio DSP on the FPGA side, with Digilent Analog Discovery / WaveForms validation throughout.
+Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** (STM32F042K6) and a **Xilinx Zybo Z7-20 (Zynq)** platform in Vivado / Vitis—bare-metal C on the MCU side, plus FPGA streaming audio DSP and real-time machine-vision pipelines, with Digilent Analog Discovery / WaveForms validation where applicable.
 
-**STM32F042 Nucleo (Labs 1–10)**
+**STM32F042 Nucleo**
 - **Toolchain & debug** — J-Link / GDB bring-up, firmware flash, and VS Code remote debug workflows
 - **GPIO & instrumentation** — LED I/O characterization with WaveForms scope / wavegen; breadboard probing of MCU pins
 - **USART** — alternate-function pin mux, interrupt-driven RX callbacks, and `printf`-style host logging
@@ -106,12 +106,18 @@ Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** 
 - **BTLE bridge** — UART-to-BTLE character loopback and streaming accelerometer data to a web device CLI
 - **Fixed-point DSP** — moving-average → fixed-point FIR, offset/scale calibration in Q-format, plus code-size and processing-time tradeoffs vs. floating point
 
-**Xilinx Zynq FPGA — AXI-Stream I2S audio DSP (Lab 11)**
+**Xilinx Zynq — AXI-Stream I2S audio DSP**
 - **AXI-Stream I2S wrappers** — VHDL transmitter / receiver with RTL schematics, testbenches, and timing closure through metastability fixes in the I2S path
 - **Streaming datapath** — dual AXI-Stream FIFOs between record and play paths, wired with PS, AXI IIC (codec control), and an Integrated Logic Analyzer for on-chip debug
 - **Hardware audio pass-through** — AD3 scope validation of clean sine pass-through (matched frequencies, no glitches) plus time- and frequency-domain loopback / noise-floor checks
 - **Selectable FIR filters** — button-selected low-pass, high-pass, band-pass, and band-stop FIR blocks (per audio channel) inserted between record and play FIFOs
 - **System verification** — spectrum sweeps, two-tone scope captures, Bode / attenuation plots, and real music/speech listening checks across all four filter modes
+
+**Xilinx Zynq — FPGA-based machine vision (Pcam 5C)**
+- **Camera → HDMI pass-through** — Digilent **Pcam 5C** (OmniVision **OV5640**) on Zybo Z7-20; Vivado hardware + Vitis C++ bring-up to drive live camera output over HDMI (timing/constraint fixes for a clean display image)
+- **Sensor datapath tracing** — photons → CIS / ADC → **MIPI CSI-2** / **D-PHY** → SCCB camera control → AXI4-Stream video transport (VDMA, demosaic, timing) → RGB/DVI → HDMI
+- **Real-time edge detection** — hardware `blur_edge_detect` path with BRAM line buffers, 3×3 windowing, **Gaussian blur**, and **Sobel** Gx/Gy edge maps; board switches (SW2 / SW3) toggle live among raw, grayscale/Gaussian, and Sobel edge-detect HDMI output
+- **Latency & resources** — block-level transient and steady-state latency estimates (e.g. ~51 µs end-to-end at 150 MHz / 1920-wide / 3×3 kernels) plus post-implementation utilization and power context on the Zynq fabric
 
 <details>
 <summary><strong>Stills</strong></summary>
@@ -133,6 +139,22 @@ Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** 
 ![Spectrum sweep passthrough](images/fpga-spectrum-sweep-passthrough.png)
 
 ![FIR filter Bode (dB)](images/fpga-fir-bode-db.png)
+
+![Zybo Pcam HDMI passthrough](images/fpga-vision-zybo-pcam-hdmi-passthrough.png)
+
+![Grayscale / Gaussian and Sobel outputs](images/fpga-vision-grayscale-and-sobel.png)
+
+![Sobel edge-detect HDMI output](images/fpga-vision-sobel-hdmi-output.png)
+
+![Pcam to HDMI signal flow](images/fpga-vision-pcam-hdmi-signal-flow.jpg)
+
+![Pcam HDMI Vivado block design](images/fpga-vision-pcam-hdmi-block-design.jpg)
+
+![Pcam signal tracing](images/fpga-vision-pcam-signal-tracing.jpg)
+
+![Edge-detect architecture](images/fpga-vision-edge-detect-architecture.jpg)
+
+![Edge-detect Vivado block design](images/fpga-vision-edge-detect-block-design.jpg)
 
 </details>
 
@@ -193,7 +215,7 @@ Paper: [ML_FinalProject_Team-2.pdf](papers/ML_FinalProject_Team-2.pdf)
 
 - **Dartmouth College** — M.Eng. Computer Engineering (Part-Time, In Progress), Mar 2025 – Jun 2027  
   Featured: *[How Mikael Asfaw Used Dartmouth’s Online M.Eng. to Bridge Hardware, Software, and AI](https://blog.coursera.org/stories/how-mikael-asfaw-used-dartmouths-online-meng-to-bridge-hardware-software-and-ai/)*  
-  Selected project themes: FPGA camera / vision pipelines, Zynq AXI-Stream I2S audio with selectable FIR filtering, STM32 embedded IMU bring-up and fixed-point calibration, and edge-AI perception-system architecture.
+  Selected project themes: Pcam 5C / MIPI CSI-2 machine-vision pipelines with Gaussian blur and Sobel edge detection on Zybo Z7-20, Zynq AXI-Stream I2S audio with selectable FIR filtering, STM32 embedded IMU bring-up and fixed-point calibration, and edge-AI perception-system architecture.
 - **University of Southern California** — M.S. Mechanical Engineering, Aug 2012 – May 2013
 - **University of Southern California** — B.S. Mechanical Engineering, Aug 2008 – May 2012
 
