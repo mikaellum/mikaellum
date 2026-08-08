@@ -1,6 +1,6 @@
 # Mikael Asfaw
 
-**Founder & Chief Engineer | Embedded Audio, Multimodal Sensing & Edge AI | 19+ Patents**
+**Founder & Chief Engineer | Edge Systems, Embedded Compute & Multimodal AI | 19+ Patents**
 
 San Carlos, California · [LinkedIn](https://www.linkedin.com/in/mikael-asfaw-72723a2b/) · [GitHub](https://github.com/mikaellum)
 
@@ -8,11 +8,11 @@ San Carlos, California · [LinkedIn](https://www.linkedin.com/in/mikael-asfaw-72
 
 ## Summary
 
-Founder and engineering leader with 10+ years of experience architecting and shipping production-scale audio, acoustic, sensing, and embedded systems across humanoid robotics, autonomous vehicles, automotive, AR/VR, wearables, security devices, and consumer electronics. Inventor on 19+ pending and granted U.S. patents.
+Founder and chief engineer building system-level edge-AI hardware for assistive technology and physical security—multimodal perception, embedded compute, sensor fusion, and on-device auditory guidance. Transitioning from a decade of production audio/acoustics at Apple, Google, Meta, Snap, Waymo, Tesla, Alarm.com, and 1X into embedded vision, FPGA DSP, inertial sensing, and edge-AI architecture. Inventor on 19+ pending and granted U.S. patent matters.
 
-**What we’re building now.** Stealth-startup focused on human-centered edge AI—bringing sensing, perception, and intelligent audio together in wearable form factors. Product and system details are private; selected inventions are under pending U.S. patent filings.
+**What we’re building now.** An IP-backed wearable edge platform that fuses vision, infrared, inertial sensing, microphones, and on-device compute for contextual awareness and auditory guidance. Product and system details remain private; selected inventions are under pending U.S. patent filings.
 
-**How the technical foundation is expanding.** Part-time graduate work in computer engineering at Dartmouth is deepening the stack beyond classical acoustics into camera and sensor pipelines, FPGA-based vision and audio signal paths, real-time filtering and calibration, and end-to-end edge-AI system architecture. Those capabilities feed the stealth work above—and strengthen every tool in this repository.
+**How the technical foundation is expanding.** Part-time Dartmouth M.Eng. work deepens the stack into MIPI CSI-2 camera pipelines, Sobel edge detection, AXI-Stream I2S/FIR DSP, SPI IMU calibration, UART-to-BLE telemetry, and edge-AI perception architecture. Those capabilities feed the company work above—and strengthen every tool in this repository.
 
 This site centers on **R&D tools and projects**: practical methods for prototyping, measuring, and validating audio, sensing, and embedded systems.
 
@@ -23,8 +23,8 @@ This site centers on **R&D tools and projects**: practical methods for prototypi
 | Domain | Capabilities |
 |--------|----------------|
 | Audio & Acoustics | Transducer design, microphone arrays, loudspeakers, spatial audio, beamforming, direction of arrival, echo control, acoustic measurement and validation |
-| Vision, Sensors & Edge | Camera and imaging pipelines (incl. MIPI CSI-2 class interfaces), FPGA vision paths, classical and learning-based machine vision, IMU / inertial sensing, sensor calibration, multimodal perception |
-| Embedded Systems & FPGA DSP | Embedded Linux, real-time signal processing, VHDL, I2S audio datapaths, AXI-Stream style streaming, fixed-point FIR and related DSP, SPI / UART / I2C, ADC, GPIO, BTLE, hardware/software bring-up |
+| Vision, Sensors & Edge | MIPI CSI-2 / D-PHY, SCCB / I2C camera control, AXI4-Stream video, FPGA camera pipelines, Gaussian blur / Sobel edge detection, RGB / HDMI, SPI IMU bring-up, sensor calibration, multimodal perception, edge-AI system architecture |
+| Embedded Systems & FPGA DSP | Embedded Linux, real-time signal processing, VHDL, I2S audio, AXI-Stream / AXI FIFOs, fixed-point FIR, SPI / UART / USART / I2C, ADC, GPIO, BTLE / Nordic UART Service, ESP32-C3, STM32, hardware/software bring-up |
 | On-Device Intelligence | Deep learning for perception and classification, compact / small language model concepts at the edge, TensorFlow-class tooling, evaluation under constrained compute and power |
 | Programming, ML & Data | Python, C, C++, VHDL, MATLAB, TensorFlow, NumPy, Pandas, SciPy, scikit-learn, librosa, statistical analysis and manufacturing analytics |
 | Modeling & Hardware | Git, Xilinx Vitis/Vivado, FPGA platforms, Raspberry Pi, STM32, COMSOL, SPICE, SolidWorks, FEA, oscilloscopes, logic analyzers |
@@ -213,7 +213,7 @@ Paper: [ML_FinalProject_Team-2.pdf](papers/ML_FinalProject_Team-2.pdf)
 
 ## Education
 
-- **Dartmouth College** — M.Eng. Computer Engineering (Part-Time, In Progress), Mar 2025 – Jun 2027  
+- **Dartmouth College** — M.Eng. Computer Engineering (Part-Time, In Progress), Mar 2025 – Mar 2027  
   Featured: *[How Mikael Asfaw Used Dartmouth’s Online M.Eng. to Bridge Hardware, Software, and AI](https://blog.coursera.org/stories/how-mikael-asfaw-used-dartmouths-online-meng-to-bridge-hardware-software-and-ai/)*  
   Selected project themes: Pcam 5C / MIPI CSI-2 machine-vision pipelines with Gaussian blur and Sobel edge detection on Zybo Z7-20, Zynq AXI-Stream I2S audio with selectable FIR filtering, STM32 embedded IMU bring-up and fixed-point calibration, and edge-AI perception-system architecture.
 - **University of Southern California** — M.S. Mechanical Engineering, Aug 2012 – May 2013
