@@ -36,7 +36,7 @@ This site centers on **R&D tools and projects**: practical methods for prototypi
 ### Table of Contents
 - [Loudspeaker LPM Simulation Tool](#loudspeaker-lpm-simulation-tool)
 - [Loudspeaker Magnetics Simulation Tool](#loudspeaker-magnetics-simulation-tool)
-- [Memory Manipulation on MSP432 ARM Cortex-M4 MCU](#memory-manipulation-on-msp432-arm-cortex-m4-mcu)
+- [Embedded Systems and FPGA DSP](#embedded-systems-and-fpga-dsp)
 - [Audio Test App](#audio-test-app)
 - [Machine Learning Models to Classify Music Genre](#machine-learning-models-to-classify-music-genre)
 
@@ -61,7 +61,7 @@ Runs locally or on remote hosts (including Raspberry Pi-class deployments). Impl
 <details>
 <summary><strong>Stills</strong></summary>
 
-![Web-page](images/loudspeakerSimulator.png)
+![Simulator](images/loudspeaker-lpm-app-still.png)
 
 </details>
 
@@ -86,17 +86,55 @@ Implementation details are proprietary.
 <details>
 <summary><strong>Stills</strong></summary>
 
-![Heat-Map](images/BL.bmp)
-
-![BL(x)](images/BLx.jpg)
+![Motor Design](images/loudspeaker-magnetics-app-still.png)
 
 </details>
 
 ---
 
-### Memory Manipulation on MSP432 ARM Cortex-M4 MCU
+### Embedded Systems and FPGA DSP
 
-Embedded coursework targeting register and memory manipulation on a TI MSP432 ARM Cortex-M4 evaluation kit—bare-metal C with a gcc / make toolchain for low-level memory and peripheral bring-up.
+Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** (STM32F042K6) and a **Xilinx Zynq** platform in Vivado—bare-metal C on the MCU side, VHDL + AXI-Stream audio DSP on the FPGA side, with Digilent Analog Discovery / WaveForms validation throughout.
+
+**STM32F042 Nucleo (Labs 1–10)**
+- **Toolchain & debug** — J-Link / GDB bring-up, firmware flash, and VS Code remote debug workflows
+- **GPIO & instrumentation** — LED I/O characterization with WaveForms scope / wavegen; breadboard probing of MCU pins
+- **USART** — alternate-function pin mux, interrupt-driven RX callbacks, and `printf`-style host logging
+- **Clocks, SysTick & PWM** — internal clock configuration, exception/callback patterns, PWM duty-cycle control, RC filtering, and LED dimming
+- **ADC & sampling** — sample-time / input-impedance tradeoffs, interrupt and **DMA** capture paths, Nyquist checks, timer-triggered sampling, and digital filtering
+- **SPI sensing** — LIS3DH accelerometer over SPI with logic-analyzer decode, interrupt-driven acquisition, and orientation plots
+- **BTLE bridge** — UART-to-BTLE character loopback and streaming accelerometer data to a web device CLI
+- **Fixed-point DSP** — moving-average → fixed-point FIR, offset/scale calibration in Q-format, plus code-size and processing-time tradeoffs vs. floating point
+
+**Xilinx Zynq FPGA — AXI-Stream I2S audio DSP (Lab 11)**
+- **AXI-Stream I2S wrappers** — VHDL transmitter / receiver with RTL schematics, testbenches, and timing closure through metastability fixes in the I2S path
+- **Streaming datapath** — dual AXI-Stream FIFOs between record and play paths, wired with PS, AXI IIC (codec control), and an Integrated Logic Analyzer for on-chip debug
+- **Hardware audio pass-through** — AD3 scope validation of clean sine pass-through (matched frequencies, no glitches) plus time- and frequency-domain loopback / noise-floor checks
+- **Selectable FIR filters** — button-selected low-pass, high-pass, band-pass, and band-stop FIR blocks (per audio channel) inserted between record and play FIFOs
+- **System verification** — spectrum sweeps, two-tone scope captures, Bode / attenuation plots, and real music/speech listening checks across all four filter modes
+
+<details>
+<summary><strong>Stills</strong></summary>
+
+![Nucleo bench setup](images/stm32-nucleo-bench-setup.jpg)
+
+![SPI LIS3DH logic decode](images/stm32-nucleo-spi-lis3dh.jpg)
+
+![Accelerometer free-rotation](images/stm32-nucleo-accel-orientation.jpg)
+
+![Fixed-point calibrated accel UART](images/stm32-nucleo-fixed-point-accel.png)
+
+![Vivado Zynq I2S + FIR block design](images/fpga-zynq-i2s-fir-block-design.png)
+
+![AXI-Stream I2S simulation](images/fpga-axis-i2s-sim-waveform.png)
+
+![AD3 audio pass-through](images/fpga-ad3-audio-passthrough.png)
+
+![Spectrum sweep passthrough](images/fpga-spectrum-sweep-passthrough.png)
+
+![FIR filter Bode (dB)](images/fpga-fir-bode-db.png)
+
+</details>
 
 ---
 
@@ -122,9 +160,7 @@ Runs on lab benches and remote hosts (including Raspberry Pi-class deployments).
 <details>
 <summary><strong>Stills</strong></summary>
 
-![Sweep](images/Sweep.png)
-
-![Play and Record](images/Speech.png)
+![Farina Sweep](images/audio-test-app-still.png)
 
 </details>
 
@@ -157,7 +193,7 @@ Paper: [ML_FinalProject_Team-2.pdf](papers/ML_FinalProject_Team-2.pdf)
 
 - **Dartmouth College** — M.Eng. Computer Engineering (Part-Time, In Progress), Mar 2025 – Jun 2027  
   Featured: *[How Mikael Asfaw Used Dartmouth’s Online M.Eng. to Bridge Hardware, Software, and AI](https://blog.coursera.org/stories/how-mikael-asfaw-used-dartmouths-online-meng-to-bridge-hardware-software-and-ai/)*  
-  Selected project themes: FPGA camera / vision pipelines, I2S audio with selectable FIR filtering, embedded IMU calibration, and edge-AI perception-system architecture.
+  Selected project themes: FPGA camera / vision pipelines, Zynq AXI-Stream I2S audio with selectable FIR filtering, STM32 embedded IMU bring-up and fixed-point calibration, and edge-AI perception-system architecture.
 - **University of Southern California** — M.S. Mechanical Engineering, Aug 2012 – May 2013
 - **University of Southern California** — B.S. Mechanical Engineering, Aug 2008 – May 2012
 
@@ -203,4 +239,4 @@ Full schedule and claim-level summaries available upon request.
 Author: [Mikael Asfaw](https://www.linkedin.com/in/mikael-asfaw-72723a2b/)  
 License: [Proprietary — see LICENSE.md](LICENSE.md)  
 Created: Feb 18, 2025  
-Updated: Aug 7, 2026
+Updated: Aug 8, 2026
