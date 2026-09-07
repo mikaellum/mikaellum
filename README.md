@@ -12,7 +12,7 @@ Founder and chief engineer building system-level edge-AI hardware for assistive 
 
 **What we’re building now.** An IP-backed wearable edge platform that fuses vision, infrared, inertial sensing, microphones, and on-device compute for contextual awareness and auditory guidance. Product and system details remain private; selected inventions are under pending U.S. patent filings.
 
-**How the technical foundation is expanding.** Part-time Dartmouth M.Eng. work deepens the stack into MIPI CSI-2 camera pipelines, Sobel edge detection, AXI-Stream I2S/FIR DSP, SPI IMU calibration, UART-to-BLE telemetry, and edge-AI perception architecture. Those capabilities feed the company work above—and strengthen every tool in this repository.
+**How the technical foundation is expanding.** Part-time Dartmouth M.Eng. work deepens the stack into MIPI CSI-2 camera pipelines, Sobel edge detection, AXI-Stream I2S/FIR DSP, SPI IMU calibration, UART-to-BLE telemetry, CNN/U-Net perception, GAN transfer, and edge-AI system architecture. Those capabilities feed the company work above—and strengthen every tool in this repository.
 
 This site centers on **R&D tools and projects**: practical methods for prototyping, measuring, and validating audio, sensing, and embedded systems.
 
@@ -25,7 +25,7 @@ This site centers on **R&D tools and projects**: practical methods for prototypi
 | Audio & Acoustics | Transducer design, microphone arrays, loudspeakers, spatial audio, beamforming, direction of arrival, echo control, acoustic measurement and validation |
 | Vision, Sensors & Edge | MIPI CSI-2 / D-PHY, SCCB / I2C camera control, AXI4-Stream video, FPGA camera pipelines, Gaussian blur / Sobel edge detection, RGB / HDMI, SPI IMU bring-up, sensor calibration, multimodal perception, edge-AI system architecture |
 | Embedded Systems & FPGA DSP | Embedded Linux, real-time signal processing, VHDL, I2S audio, AXI-Stream / AXI FIFOs, fixed-point FIR, SPI / UART / USART / I2C, ADC, GPIO, BTLE / Nordic UART Service, ESP32-C3, STM32, hardware/software bring-up |
-| On-Device Intelligence | Deep learning for perception and classification, compact / small language model concepts at the edge, TensorFlow-class tooling, evaluation under constrained compute and power |
+| On-Device Intelligence | CNNs with GAP heads, U-Net segmentation, bounding-box regression, DCGAN transfer and sample-efficient GAN training, compact / small language model concepts at the edge, TensorFlow / KerasTuner, evaluation under constrained compute, power, and model size |
 | Programming, ML & Data | Python, C, C++, VHDL, MATLAB, TensorFlow, NumPy, Pandas, SciPy, scikit-learn, librosa, statistical analysis and manufacturing analytics |
 | Modeling & Hardware | Git, Xilinx Vitis/Vivado, FPGA platforms, Raspberry Pi, STM32, COMSOL, SPICE, SolidWorks, FEA, oscilloscopes, logic analyzers |
 
@@ -34,11 +34,41 @@ This site centers on **R&D tools and projects**: practical methods for prototypi
 ## R&D Tools & Projects
 
 ### Table of Contents
+- [Audio Test App](#audio-test-app)
 - [Loudspeaker LPM Simulation Tool](#loudspeaker-lpm-simulation-tool)
 - [Loudspeaker Magnetics Simulation Tool](#loudspeaker-magnetics-simulation-tool)
-- [Embedded Systems, FPGA Audio DSP, and Machine Vision](#embedded-systems-fpga-audio-dsp-and-machine-vision)
-- [Audio Test App](#audio-test-app)
-- [Machine Learning Models to Classify Music Genre](#machine-learning-models-to-classify-music-genre)
+- [Dartmouth Graduate Studies](#dartmouth-graduate-studies)
+  - [Embedded Systems, FPGA Audio DSP, and Machine Vision](#embedded-systems-fpga-audio-dsp-and-machine-vision)
+  - [Machine Learning](#machine-learning)
+  - [Deep Learning](#deep-learning)
+
+---
+
+### Audio Test App
+
+Python measurement toolkit—and browser dashboard—for loudspeaker and audio-system validation on real hardware. Highlights include:
+
+- **Stimulus generation** — noise and exponential sweeps for system excitation
+- **Play / record** — drive an output while capturing from selected input devices (or record alone)
+- **Loudspeaker characterization** — frequency response, distortion, and related impulse-response views from sweep captures
+- **Microphone tests** — DUT mic measurements against a reference path, with optional speaker flattening so the mic—not the playback chain—is what you score
+- **Microphone calibration** — convert digital levels to SPL using a known calibrator tone
+- **Speaker equalization** — measure-and-correct workflows to flatten a reference loudspeaker for cleaner mic work
+- **Speech quality (MOS)** — non-intrusive MOS-style scoring on speech WAV files (no clean reference transcript required)
+- **Capture analysis** — waveform, spectrum, spectrogram, and level statistics on recorded takes
+
+Runs on lab benches and remote hosts (including Raspberry Pi-class deployments). Implementation details are proprietary.
+
+**Demo:** [Audio Test App (MP4)](videos/audio_test_app_2026-08-07.mp4)
+
+<video src="videos/audio_test_app_2026-08-07.mp4" controls width="100%"></video>
+
+<details>
+<summary><strong>Stills</strong></summary>
+
+![Farina Sweep](images/audio-test-app-still.png)
+
+</details>
 
 ---
 
@@ -92,7 +122,11 @@ Implementation details are proprietary.
 
 ---
 
-### Embedded Systems, FPGA Audio DSP, and Machine Vision
+### Dartmouth Graduate Studies
+
+Part-time M.Eng. Computer Engineering work spanning embedded bring-up, FPGA audio DSP and machine vision, classical ML, and a deep-learning sequence in classification, segmentation/detection, and generative models.
+
+#### Embedded Systems, FPGA Audio DSP, and Machine Vision
 
 Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** (STM32F042K6) and a **Xilinx Zybo Z7-20 (Zynq)** platform in Vivado / Vitis—bare-metal C on the MCU side, plus FPGA streaming audio DSP and real-time machine-vision pipelines, with Digilent Analog Discovery / WaveForms validation where applicable.
 
@@ -158,37 +192,7 @@ Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** 
 
 </details>
 
----
-
-### Audio Test App
-
-Python measurement toolkit—and browser dashboard—for loudspeaker and audio-system validation on real hardware. Highlights include:
-
-- **Stimulus generation** — noise and exponential sweeps for system excitation
-- **Play / record** — drive an output while capturing from selected input devices (or record alone)
-- **Loudspeaker characterization** — frequency response, distortion, and related impulse-response views from sweep captures
-- **Microphone tests** — DUT mic measurements against a reference path, with optional speaker flattening so the mic—not the playback chain—is what you score
-- **Microphone calibration** — convert digital levels to SPL using a known calibrator tone
-- **Speaker equalization** — measure-and-correct workflows to flatten a reference loudspeaker for cleaner mic work
-- **Speech quality (MOS)** — non-intrusive MOS-style scoring on speech WAV files (no clean reference transcript required)
-- **Capture analysis** — waveform, spectrum, spectrogram, and level statistics on recorded takes
-
-Runs on lab benches and remote hosts (including Raspberry Pi-class deployments). Implementation details are proprietary.
-
-**Demo:** [Audio Test App (MP4)](videos/audio_test_app_2026-08-07.mp4)
-
-<video src="videos/audio_test_app_2026-08-07.mp4" controls width="100%"></video>
-
-<details>
-<summary><strong>Stills</strong></summary>
-
-![Farina Sweep](images/audio-test-app-still.png)
-
-</details>
-
----
-
-### Machine Learning Models to Classify Music Genre
+#### Machine Learning
 
 Short-clip music-genre classifiers (TensorFlow NN and SVM) trained on audio features via librosa. Architecture is sound; F1 settled around 0.41–0.47 on a noisy multi-genre mashup dataset.
 
@@ -209,13 +213,100 @@ Paper: [ML_FinalProject_Team-2.pdf](papers/ML_FinalProject_Team-2.pdf)
 
 </details>
 
+#### Deep Learning
+
+Dartmouth DL sequence: compact CNNs for image classification, U-Net segmentation plus bounding-box regression, then DCGAN training, cat→dog transfer, and sample-efficient GAN optimization.
+
+**Image classification (cats vs dogs)**
+- Four-block CNN with **GlobalAveragePooling2D** instead of Flatten, tuned with KerasTuner (Adam, mild Dropout / L2)
+- Tuned GAP model: **92.0%** test accuracy, precision / recall / F1 **~0.92**, ROC AUC **0.975** on 3,752 held-out images
+- Saved model **~2.8 MB** (~240k params) vs an earlier Flatten CNN at **~98 MB** and ~86.5% test accuracy
+- Data cleanup for corrupt JPEGs; EarlyStopping so train/val curves stayed aligned
+
+<details>
+<summary><strong>Stills</strong></summary>
+
+![Cats vs dogs training samples](images/dl-101-cats-dogs-samples.jpg)
+
+![Tuned GAP accuracy curves](images/dl-101-tuned-accuracy-curves.jpg)
+
+![Optimized CNN confusion matrix](images/dl-101-confusion-matrix.jpg)
+
+![Optimized CNN ROC curves](images/dl-101-roc-curves.jpg)
+
+</details>
+
+**Image segmentation, crop bootstrapping, and bounding boxes**
+- Tiny **U-Net** (538k params, ~2.1 MB) over FCN / larger U-Net after KerasTuner; pixel accuracy **0.883**, pet/background AUC **~0.976**, mean mask IoU **0.808**, AP@0.50 **0.949**
+- Used the segmenter to crop ~24.9k Cat/Dog images (pet + border foreground, 8% box padding) for later stages
+- Box regressor on Oxford-IIIT Pet XML **head** boxes: head attached to the last **spatial** feature map (not GAP), two-stage freeze then fine-tune
+- Mean IoU **0.538** (recall@0.50 **0.640**) vs ~0.22 for sliding-window + classifier; flip TTA + segmenter mask clamp raised mean IoU to **0.563** / AP@0.50 **0.687** with no retraining
+
+<details>
+<summary><strong>Stills</strong></summary>
+
+![Tuned U-Net training curves](images/dl-102-unet-tuner-curves.jpg)
+
+![Segmenter pixel confusion matrix](images/dl-102-segmenter-confusion.jpg)
+
+![Segmenter ROC curves](images/dl-102-segmenter-roc.jpg)
+
+![Segmenter-guided Cat/Dog crops](images/dl-102-bootstrapped-crops.jpg)
+
+![Head bounding-box predictions vs XML ground truth](images/dl-102-bbox-predictions.jpg)
+
+</details>
+
+**GANs and transfer learning**
+- 128×128 RGB **DCGAN** (latent dim 100; G ~2.15M params, D ~741k): upsample+Conv generator, strided-conv discriminator, one-sided label smoothing and instance noise
+- Cat GAN: FID **167.8** after 100 epochs; recognizable faces from blob-like early grids
+- Cat→dog transfer (10-epoch warmup + 50-epoch fine-tune, ~9 min) reached FID **281.9** vs scratch-dog FID **351.3** (~21 min)—faster usable faces, with a stronger transferred discriminator (D(fake) 0.12 vs 0.31)
+
+<details>
+<summary><strong>Stills</strong></summary>
+
+![Generated cats at epoch 5](images/dl-201-cats-epoch-5.jpg)
+
+![Generated cats at epoch 100](images/dl-201-cats-epoch-100.jpg)
+
+![Cat GAN loss, SSIM, and FID](images/dl-201-cat-gan-metrics.jpg)
+
+![Scratch dog GAN at epoch 100](images/dl-201-dogs-scratch-epoch-100.jpg)
+
+![Transfer dog GAN after fine-tune](images/dl-201-dogs-transfer-epoch-50.jpg)
+
+![Scratch vs transfer losses and SSIM](images/dl-201-scratch-vs-transfer.jpg)
+
+</details>
+
+**Sample-efficient GAN optimization**
+- Ranked goals: fewer target samples, then size/latency, without collapsing quality; evaluate on FID, SSIM diversity, and grids—not adversarial loss
+- Task 1: 25% AFHQ dog **YOLO face crops**, hinge loss, spectral-normalized D, DiffAugment, mixed cat-G / dog-D transfer; restored epoch **32** (not the last epoch) at FID **241.47** vs Project 201 transfer FID **251.22**, same 2.15M generator, **~0.70 ms/image**
+- Historical BCE runs: 474 images beat ~1,185 on FID, so more target data was not treated as an automatic upgrade
+- Task 2: full Oxford-IIIT Pet photos (pose/background in frame); YOLO “face” crops abandoned after inspection. Best quantitative run was a short **fresh-D**, fully unfrozen Stage-3 diagnostic (FID **273.53**), not a long transferred tuner
+
+<details>
+<summary><strong>Stills</strong></summary>
+
+![YOLO-cropped AFHQ dog faces](images/dl-202-yolo-dog-faces.jpg)
+
+![Task 1 restored generator samples](images/dl-202-task1-generated-dogs.jpg)
+
+![Task 1 hinge transfer FID and losses](images/dl-202-task1-metrics.jpg)
+
+![Full-image Oxford dog distribution](images/dl-202-oxford-full-images.jpg)
+
+![Task 2 fresh-D diagnostic samples](images/dl-202-task2-diagnostic-samples.jpg)
+
+</details>
+
 ---
 
 ## Education
 
 - **Dartmouth College** — M.Eng. Computer Engineering (Part-Time, In Progress), Mar 2025 – Mar 2027  
   Featured: *[How Mikael Asfaw Used Dartmouth’s Online M.Eng. to Bridge Hardware, Software, and AI](https://blog.coursera.org/stories/how-mikael-asfaw-used-dartmouths-online-meng-to-bridge-hardware-software-and-ai/)*  
-  Selected project themes: Pcam 5C / MIPI CSI-2 machine-vision pipelines with Gaussian blur and Sobel edge detection on Zybo Z7-20, Zynq AXI-Stream I2S audio with selectable FIR filtering, STM32 embedded IMU bring-up and fixed-point calibration, and edge-AI perception-system architecture.
+  Selected project themes: Pcam 5C / MIPI CSI-2 machine-vision pipelines with Gaussian blur and Sobel edge detection on Zybo Z7-20, Zynq AXI-Stream I2S audio with selectable FIR filtering, STM32 embedded IMU bring-up and fixed-point calibration, audio-genre ML, compact CNN / U-Net perception, bounding-box regression, DCGAN transfer, and sample-efficient GAN optimization.
 - **University of Southern California** — M.S. Mechanical Engineering, Aug 2012 – May 2013
 - **University of Southern California** — B.S. Mechanical Engineering, Aug 2008 – May 2012
 
@@ -261,4 +352,4 @@ Full schedule and claim-level summaries available upon request.
 Author: [Mikael Asfaw](https://www.linkedin.com/in/mikael-asfaw-72723a2b/)  
 License: [Proprietary — see LICENSE.md](LICENSE.md)  
 Created: Feb 18, 2025  
-Updated: Aug 8, 2026
+Updated: Sep 7, 2026
