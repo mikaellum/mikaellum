@@ -2,7 +2,7 @@
 
 **Founder & Chief Engineer | Edge Systems, Embedded Compute & Multimodal AI | 19+ Patents**
 
-San Carlos, California · [LinkedIn](https://www.linkedin.com/in/mikael-asfaw-72723a2b/) · [GitHub](https://github.com/mikaellum)
+San Carlos, California · [Ekhos-Phos](https://ekhosphos.com/) · [LinkedIn](https://www.linkedin.com/in/mikael-asfaw-72723a2b/) · [GitHub](https://github.com/mikaellum)
 
 ---
 
@@ -10,7 +10,7 @@ San Carlos, California · [LinkedIn](https://www.linkedin.com/in/mikael-asfaw-72
 
 Founder and chief engineer building system-level edge-AI hardware for assistive technology and physical security—multimodal perception, embedded compute, sensor fusion, and on-device auditory guidance. Transitioning from a decade of production audio/acoustics at Apple, Google, Meta, Snap, Waymo, Tesla, Alarm.com, and 1X into embedded vision, FPGA DSP, inertial sensing, and edge-AI architecture. Inventor on 19+ pending and granted U.S. patent matters.
 
-**What we’re building now.** An IP-backed wearable edge platform that fuses vision, infrared, inertial sensing, microphones, and on-device compute for contextual awareness and auditory guidance. Product and system details remain private; selected inventions are under pending U.S. patent filings.
+**What we’re building now.** At [Ekhos-Phos](https://ekhosphos.com/), multimodal edge-AI hardware and engineering infrastructure for assistive technology, physical security, and intelligent sensing. Product and system details remain private; selected inventions are under pending U.S. patent filings.
 
 **How the technical foundation is expanding.** Part-time Dartmouth M.Eng. work deepens the stack into MIPI CSI-2 camera pipelines, Sobel edge detection, AXI-Stream I2S/FIR DSP, SPI IMU calibration, UART-to-BLE telemetry, CNN/U-Net perception, GAN transfer, and edge-AI system architecture. Those capabilities feed the company work above—and strengthen every tool in this repository.
 
@@ -59,9 +59,9 @@ Python measurement toolkit—and browser dashboard—for loudspeaker and audio-s
 
 Runs on lab benches and remote hosts (including Raspberry Pi-class deployments). Implementation details are proprietary.
 
-**Demo:** [Audio Test App (MP4)](videos/audio_test_app_2026-08-07.mp4)
+**Demo:** [Audio Test App on YouTube](https://youtu.be/wznU3M3sZ4A)
 
-<video src="videos/audio_test_app_2026-08-07.mp4" controls width="100%"></video>
+[![Audio Test App Demo](https://img.youtube.com/vi/wznU3M3sZ4A/hqdefault.jpg)](https://youtu.be/wznU3M3sZ4A)
 
 <details>
 <summary><strong>Stills</strong></summary>
@@ -84,9 +84,9 @@ Browser-based loudspeaker linear-parameter (LPM) simulator for comparing two dri
 
 Runs locally or on remote hosts (including Raspberry Pi-class deployments). Implementation details are proprietary.
 
-**Demo:** [Loudspeaker LPM (MP4)](videos/loudspeaker_lpm_2026-08-07.mp4)
+**Demo:** [Loudspeaker LPM on YouTube](https://youtu.be/L7mohlv033o)
 
-<video src="videos/loudspeaker_lpm_2026-08-07.mp4" controls width="100%"></video>
+[![Loudspeaker LPM Demo](https://img.youtube.com/vi/L7mohlv033o/hqdefault.jpg)](https://youtu.be/L7mohlv033o)
 
 <details>
 <summary><strong>Stills</strong></summary>
@@ -109,9 +109,9 @@ Finite-element magnetics workflow for loudspeaker motor design—iterate the mag
 
 Implementation details are proprietary.
 
-**Demo:** [Loudspeaker Magnetics (MP4)](videos/loudspeaker_magnetics_2026-08-07.mp4)
+**Demo:** [Loudspeaker Magnetics on YouTube](https://youtu.be/Q52E0_ZDnZ0)
 
-<video src="videos/loudspeaker_magnetics_2026-08-07.mp4" controls width="100%"></video>
+[![Loudspeaker Magnetics Demo](https://img.youtube.com/vi/Q52E0_ZDnZ0/hqdefault.jpg)](https://youtu.be/Q52E0_ZDnZ0)
 
 <details>
 <summary><strong>Stills</strong></summary>
@@ -208,8 +208,6 @@ Trained ~100 epochs (accuracy ~0.96, loss ~0.194 on training metrics).
 ![TensorFlow Confusion Matrix](images/tf_NN_Confusion_matrix.jpg)
 
 ![SVM Confusion Matrix](images/SVM_Confusion_matrix.jpg)
-
-Paper: [ML_FinalProject_Team-2.pdf](papers/ML_FinalProject_Team-2.pdf)
 
 </details>
 
@@ -352,4 +350,4 @@ Full schedule and claim-level summaries available upon request.
 Author: [Mikael Asfaw](https://www.linkedin.com/in/mikael-asfaw-72723a2b/)  
 License: [Proprietary — see LICENSE.md](LICENSE.md)  
 Created: Feb 18, 2025  
-Updated: Sep 7, 2026
+Updated: Sep 27, 2026
