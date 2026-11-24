@@ -41,6 +41,7 @@ This site centers on **R&D tools and projects**: practical methods for prototypi
   - [Embedded Systems, FPGA Audio DSP, and Machine Vision](#embedded-systems-fpga-audio-dsp-and-machine-vision)
   - [Machine Learning](#machine-learning)
   - [Deep Learning](#deep-learning)
+  - [Capstone Project — Mobile ECG Device](#capstone-project--mobile-ecg-device)
 
 ---
 
@@ -126,11 +127,16 @@ Implementation details are proprietary.
 
 Part-time M.Eng. Computer Engineering work spanning embedded bring-up, FPGA audio DSP and machine vision, classical ML, and a deep-learning sequence in classification, segmentation/detection, and generative models.
 
+In plain language, these projects explore how to make small computers sense the physical world, understand audio and images, and make useful decisions without relying on a large cloud server. The work progresses from connecting sensors and building real-time hardware pipelines to training compact AI models and combining those skills in a portable ECG capstone.
+
 #### Embedded Systems, FPGA Audio DSP, and Machine Vision
 
-Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** (STM32F042K6) and a **Xilinx Zybo Z7-20 (Zynq)** platform in Vivado / Vitis—bare-metal C on the MCU side, plus FPGA streaming audio DSP and real-time machine-vision pipelines, with Digilent Analog Discovery / WaveForms validation where applicable.
+This section is about teaching small, specialized computers to work directly with real-world signals. The projects read motion sensors, process live audio, and turn a camera feed into a real-time vision system. They also show how the finished hardware was measured and tested to confirm that it behaved as intended.
 
 **STM32F042 Nucleo**
+
+The STM32 work builds the fundamentals of a sensor-based embedded device: reading inputs, controlling outputs, communicating with other devices, and doing useful calculations with limited memory and processing power. A small development board was used to collect motion data, filter it, and send it wirelessly for viewing on another device.
+
 - **Toolchain & debug** — J-Link / GDB bring-up, firmware flash, and VS Code remote debug workflows
 - **GPIO & instrumentation** — LED I/O characterization with WaveForms scope / wavegen; breadboard probing of MCU pins
 - **USART** — alternate-function pin mux, interrupt-driven RX callbacks, and `printf`-style host logging
@@ -141,6 +147,9 @@ Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** 
 - **Fixed-point DSP** — moving-average → fixed-point FIR, offset/scale calibration in Q-format, plus code-size and processing-time tradeoffs vs. floating point
 
 **Xilinx Zynq — AXI-Stream I2S audio DSP**
+
+This project creates a live digital-audio path inside an FPGA—a chip whose internal hardware can be configured for a specific job. Audio enters the board, passes through selectable filters that change which frequencies are heard, and plays back in real time. Bench measurements and listening tests were used to verify clean operation.
+
 - **AXI-Stream I2S wrappers** — VHDL transmitter / receiver with RTL schematics, testbenches, and timing closure through metastability fixes in the I2S path
 - **Streaming datapath** — dual AXI-Stream FIFOs between record and play paths, wired with PS, AXI IIC (codec control), and an Integrated Logic Analyzer for on-chip debug
 - **Hardware audio pass-through** — AD3 scope validation of clean sine pass-through (matched frequencies, no glitches) plus time- and frequency-domain loopback / noise-floor checks
@@ -148,6 +157,9 @@ Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** 
 - **System verification** — spectrum sweeps, two-tone scope captures, Bode / attenuation plots, and real music/speech listening checks across all four filter modes
 
 **Xilinx Zynq — FPGA-based machine vision (Pcam 5C)**
+
+This project connects a camera directly to an FPGA and displays the live picture over HDMI. The hardware can show the original image, a simplified grayscale view, or an edge-detected view that highlights object boundaries. It demonstrates the kind of fast, local vision processing used in robotics, inspection, and other edge-computing systems.
+
 - **Camera → HDMI pass-through** — Digilent **Pcam 5C** (OmniVision **OV5640**) on Zybo Z7-20; Vivado hardware + Vitis C++ bring-up to drive live camera output over HDMI (timing/constraint fixes for a clean display image)
 - **Sensor datapath tracing** — photons → CIS / ADC → **MIPI CSI-2** / **D-PHY** → SCCB camera control → AXI4-Stream video transport (VDMA, demosaic, timing) → RGB/DVI → HDMI
 - **Real-time edge detection** — hardware `blur_edge_detect` path with BRAM line buffers, 3×3 windowing, **Gaussian blur**, and **Sobel** Gx/Gy edge maps; board switches (SW2 / SW3) toggle live among raw, grayscale/Gaussian, and Sobel edge-detect HDMI output
@@ -194,7 +206,9 @@ Dartmouth graduate embedded / FPGA lab work spanning an **STM32F042 Nucleo-32** 
 
 #### Machine Learning
 
-Short-clip music-genre classifiers (TensorFlow NN and SVM) trained on audio features via librosa. Architecture is sound; F1 settled around 0.41–0.47 on a noisy multi-genre mashup dataset.
+This project teaches a computer to estimate a song's genre from a short audio clip. Instead of listening as a person would, the models compare measurable traits such as rhythm, tone, and frequency content. The experiment used both a neural network and a support-vector machine; performance was modest because the test clips mixed multiple genres and contained substantial noise.
+
+Technically, the classifiers were built with TensorFlow and SVM models using audio features extracted with librosa. F1 settled around 0.41–0.47 on the noisy multi-genre mashup dataset.
 
 <details>
 <summary><strong>Architecture & results</strong></summary>
@@ -213,9 +227,12 @@ Trained ~100 epochs (accuracy ~0.96, loss ~0.194 on training metrics).
 
 #### Deep Learning
 
-Dartmouth DL sequence: compact CNNs for image classification, U-Net segmentation plus bounding-box regression, then DCGAN training, cat→dog transfer, and sample-efficient GAN optimization.
+This sequence moves through three increasingly complex computer-vision tasks: recognizing what is in an image, locating the important parts of that image, and generating new images. The emphasis was on making the models compact enough for devices with limited storage and compute, then measuring where each approach worked well and where it did not.
 
 **Image classification (cats vs dogs)**
+
+The first model answers a simple question: does a picture contain a cat or a dog? The final version was both more accurate and dramatically smaller than the initial approach, showing that a carefully designed model can do more with fewer resources.
+
 - Four-block CNN with **GlobalAveragePooling2D** instead of Flatten, tuned with KerasTuner (Adam, mild Dropout / L2)
 - Tuned GAP model: **92.0%** test accuracy, precision / recall / F1 **~0.92**, ROC AUC **0.975** on 3,752 held-out images
 - Saved model **~2.8 MB** (~240k params) vs an earlier Flatten CNN at **~98 MB** and ~86.5% test accuracy
@@ -235,6 +252,9 @@ Dartmouth DL sequence: compact CNNs for image classification, U-Net segmentation
 </details>
 
 **Image segmentation, crop bootstrapping, and bounding boxes**
+
+The next models go beyond naming the animal and identify where it appears in the picture. One marks the animal's shape at the pixel level, while another draws a box around its head. Those locations can then be used to create cleaner training images for later projects.
+
 - Tiny **U-Net** (538k params, ~2.1 MB) over FCN / larger U-Net after KerasTuner; pixel accuracy **0.883**, pet/background AUC **~0.976**, mean mask IoU **0.808**, AP@0.50 **0.949**
 - Used the segmenter to crop ~24.9k Cat/Dog images (pet + border foreground, 8% box padding) for later stages
 - Box regressor on Oxford-IIIT Pet XML **head** boxes: head attached to the last **spatial** feature map (not GAP), two-stage freeze then fine-tune
@@ -256,6 +276,9 @@ Dartmouth DL sequence: compact CNNs for image classification, U-Net segmentation
 </details>
 
 **GANs and transfer learning**
+
+This project trains an AI system to create new cat and dog faces. It also tests transfer learning: starting the dog model with knowledge learned from cats instead of beginning from scratch. The transferred model reached recognizable results more quickly, although image quality still had room to improve.
+
 - 128×128 RGB **DCGAN** (latent dim 100; G ~2.15M params, D ~741k): upsample+Conv generator, strided-conv discriminator, one-sided label smoothing and instance noise
 - Cat GAN: FID **167.8** after 100 epochs; recognizable faces from blob-like early grids
 - Cat→dog transfer (10-epoch warmup + 50-epoch fine-tune, ~9 min) reached FID **281.9** vs scratch-dog FID **351.3** (~21 min)—faster usable faces, with a stronger transferred discriminator (D(fake) 0.12 vs 0.31)
@@ -278,6 +301,9 @@ Dartmouth DL sequence: compact CNNs for image classification, U-Net segmentation
 </details>
 
 **Sample-efficient GAN optimization**
+
+The final generative-AI project asks how much useful image generation is possible with less training data and computation. Several approaches were compared carefully, and the work also documented a valuable negative result: adding more varied images did not automatically make the model better.
+
 - Ranked goals: fewer target samples, then size/latency, without collapsing quality; evaluate on FID, SSIM diversity, and grids—not adversarial loss
 - Task 1: 25% AFHQ dog **YOLO face crops**, hinge loss, spectral-normalized D, DiffAugment, mixed cat-G / dog-D transfer; restored epoch **32** (not the last epoch) at FID **241.47** vs Project 201 transfer FID **251.22**, same 2.15M generator, **~0.70 ms/image**
 - Historical BCE runs: 474 images beat ~1,185 on FID, so more target data was not treated as an automatic upgrade
@@ -298,13 +324,47 @@ Dartmouth DL sequence: compact CNNs for image classification, U-Net segmentation
 
 </details>
 
+#### Capstone Project — Mobile ECG Device
+
+The capstone brings the program's embedded systems, signal processing, machine learning, wireless communication, and power-management work into one portable prototype. The battery-powered device records a 30-second electrocardiogram (ECG), estimates heart rate, checks whether the rhythm appears normal or shows signs of atrial fibrillation (AFib), and sends the result to a phone over Bluetooth. It is an educational engineering prototype, not a clinical medical device.
+
+- **Portable sensing** — an Arduino Nano 33 IoT collects the ECG signal and processes it locally, without needing a cloud connection
+- **On-device decision** — a compact neural network examines five six-second portions of the recording and combines their votes into one normal-or-AFib result
+- **Heart-rate measurement** — a separate signal-processing path finds heartbeats and converts the spacing between them into beats per minute
+- **Phone connection** — Bluetooth Low Energy sends the heart rate and rhythm classification to a phone
+- **Battery management** — the system runs from a single 9 V battery and powers itself down after the ECG signal has been absent for an extended period
+- **Measured results** — the final battery test reached **84.4%** rhythm-classification accuracy on 199 scored records, and results were available about **2.84 seconds** after each 30-second recording ended
+- **Live demonstration** — in one finger-electrode test, the prototype reported **89 bpm** and no AFib while an Apple Watch measured **87 bpm**; this single comparison demonstrates the workflow rather than clinical accuracy
+
+**Demo:** [Mobile ECG Device Capstone on YouTube](https://www.youtube.com/watch?v=C4mK1A029fk)
+
+[![Mobile ECG Device Capstone Demo](https://img.youtube.com/vi/C4mK1A029fk/hqdefault.jpg)](https://www.youtube.com/watch?v=C4mK1A029fk)
+
+<details>
+<summary><strong>Stills</strong></summary>
+
+![Mobile ECG device system architecture](images/ecg-system-architecture.png)
+
+![ECG neural-network classifier architecture](images/ecg-neural-network-architecture.png)
+
+![Battery-powered mobile ECG hardware setup](images/ecg-hardware-setup.jpg)
+
+![ECG input and acquired-signal loopback validation](images/ecg-loopback-validation.png)
+
+![Battery-powered AFib classification results](images/ecg-battery-classification.png)
+
+![Lab 9 heart-rate validation with 961 valid estimates and 37 invalid outputs](images/ecg-heart-rate-validation.png)
+
+![Final battery power-state measurements](images/ecg-power-states.png)
+
+</details>
+
 ---
 
 ## Education
 
 - **Dartmouth College** — M.Eng. Computer Engineering (Part-Time, In Progress), Mar 2025 – Mar 2027  
-  Featured: *[How Mikael Asfaw Used Dartmouth’s Online M.Eng. to Bridge Hardware, Software, and AI](https://blog.coursera.org/stories/how-mikael-asfaw-used-dartmouths-online-meng-to-bridge-hardware-software-and-ai/)*  
-  Selected project themes: Pcam 5C / MIPI CSI-2 machine-vision pipelines with Gaussian blur and Sobel edge detection on Zybo Z7-20, Zynq AXI-Stream I2S audio with selectable FIR filtering, STM32 embedded IMU bring-up and fixed-point calibration, audio-genre ML, compact CNN / U-Net perception, bounding-box regression, DCGAN transfer, and sample-efficient GAN optimization.
+  Featured: *[How Mikael Asfaw Used Dartmouth’s Online M.Eng. to Bridge Hardware, Software, and AI](https://blog.coursera.org/stories/how-mikael-asfaw-used-dartmouths-online-meng-to-bridge-hardware-software-and-ai/)*
 - **University of Southern California** — M.S. Mechanical Engineering, Aug 2012 – May 2013
 - **University of Southern California** — B.S. Mechanical Engineering, Aug 2008 – May 2012
 
